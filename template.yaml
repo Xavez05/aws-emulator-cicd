@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Prueba de despliegue con AWS Emulator
+
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+
+  Tabla:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: prueba
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
